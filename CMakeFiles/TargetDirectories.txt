@@ -1,0 +1,5 @@
+D:/OpenCVTest/CMakeFiles/libzxing.dir
+D:/OpenCVTest/CMakeFiles/zxing.dir
+D:/OpenCVTest/CMakeFiles/INSTALL.dir
+D:/OpenCVTest/CMakeFiles/ALL_BUILD.dir
+D:/OpenCVTest/CMakeFiles/ZERO_CHECK.dir

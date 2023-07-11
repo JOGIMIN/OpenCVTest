@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\OpenCVTest\CMakeFiles\6560ad96b66ea201c5f1e4c38ba657cf\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\zxing-cpp-master\cmake\FindCPPUNIT.cmake">
+      <Filter>Buildsystem Input Files\cmake</Filter>
+    </None>
+    <None Include="D:\zxing-cpp-master\cmake\FindIconv.cmake">
+      <Filter>Buildsystem Input Files\cmake</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{665E667B-AD67-3914-B567-945C08E5F3FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Buildsystem Input Files\cmake">
+      <UniqueIdentifier>{C84C5ECF-1976-3A6B-896F-80AAF1BE7C6A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

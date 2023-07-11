@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{51C97857-4FDC-3DCA-BCC2-A33006FC7DF5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>libzxing</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\OpenCVTest\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libzxing.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libzxing</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\OpenCVTest\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libzxing.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libzxing</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\OpenCVTest\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">libzxing.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">libzxing</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\OpenCVTest\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">libzxing.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">libzxing</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\zxing-cpp-master\.\core\src;D:\zxing-cpp-master\.\core\lib\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\zxing-cpp-master\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/zxing-cpp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/zxing-cpp-master -BD:/OpenCVTest --check-stamp-file D:/OpenCVTest/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCXXCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeRCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeSystem.cmake;D:\zxing-cpp-master\cmake\FindCPPUNIT.cmake;D:\zxing-cpp-master\cmake\FindIconv.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\OpenCVTest\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/zxing-cpp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/zxing-cpp-master -BD:/OpenCVTest --check-stamp-file D:/OpenCVTest/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCXXCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeRCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeSystem.cmake;D:\zxing-cpp-master\cmake\FindCPPUNIT.cmake;D:\zxing-cpp-master\cmake\FindIconv.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\OpenCVTest\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/zxing-cpp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/zxing-cpp-master -BD:/OpenCVTest --check-stamp-file D:/OpenCVTest/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCXXCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeRCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeSystem.cmake;D:\zxing-cpp-master\cmake\FindCPPUNIT.cmake;D:\zxing-cpp-master\cmake\FindIconv.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\OpenCVTest\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/zxing-cpp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/zxing-cpp-master -BD:/OpenCVTest --check-stamp-file D:/OpenCVTest/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeCXXCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeRCCompiler.cmake;D:\OpenCVTest\CMakeFiles\3.27.0-rc2\CMakeSystem.cmake;D:\zxing-cpp-master\cmake\FindCPPUNIT.cmake;D:\zxing-cpp-master\cmake\FindIconv.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\OpenCVTest\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\zxing-cpp-master\core\src\bigint\BigInteger.cc" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigInteger.hh" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\bigint\BigIntegerAlgorithms.cc" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigIntegerAlgorithms.hh" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigIntegerLibrary.hh" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\bigint\BigIntegerUtils.cc" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigIntegerUtils.hh" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\bigint\BigUnsigned.cc" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigUnsigned.hh" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\bigint\BigUnsignedInABase.cc" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\BigUnsignedInABase.hh" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\bigint\NumberlikeArray.hh" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\win32\zxing\iconv.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\win32\zxing\stdint.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\BarcodeFormat.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\BarcodeFormat.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\Binarizer.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\Binarizer.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\BinaryBitmap.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\BinaryBitmap.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\ChecksumException.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\ChecksumException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\DecodeHints.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\DecodeHints.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\Exception.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\Exception.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\FormatException.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\FormatException.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\IllegalStateException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\InvertedLuminanceSource.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\InvertedLuminanceSource.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\LuminanceSource.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\LuminanceSource.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\MultiFormatReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\MultiFormatReader.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\NotFoundException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\Reader.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\ReaderException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\Result.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\Result.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\ResultIO.cpp" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\ResultPoint.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\ResultPoint.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\ResultPointCallback.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\ResultPointCallback.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\ZXing.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\aztec\AztecDetectorResult.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\aztec\AztecDetectorResult.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\aztec\AztecReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\aztec\AztecReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\aztec\decoder\Decoder.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/aztec/decoder/Decoder.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\aztec\decoder\Decoder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\aztec\detector\Detector.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/aztec/detector/Detector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\aztec\detector\Detector.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\Array.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\BitArray.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\BitArray.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\BitArrayIO.cpp" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\BitMatrix.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\BitMatrix.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\BitSource.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\BitSource.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\CharacterSetECI.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\CharacterSetECI.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\Counted.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\DecoderResult.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\DecoderResult.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\DetectorResult.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\DetectorResult.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\GlobalHistogramBinarizer.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\GlobalHistogramBinarizer.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\GreyscaleLuminanceSource.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\GreyscaleLuminanceSource.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\GreyscaleRotatedLuminanceSource.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\GreyscaleRotatedLuminanceSource.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\GridSampler.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\GridSampler.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\HybridBinarizer.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\HybridBinarizer.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\IllegalArgumentException.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\IllegalArgumentException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\PerspectiveTransform.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\PerspectiveTransform.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\Point.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\Str.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\Str.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\StringUtils.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\StringUtils.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\detector\JavaMath.h" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\detector\MathUtils.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\detector\MonochromeRectangleDetector.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\detector\MonochromeRectangleDetector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\detector\WhiteRectangleDetector.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\detector\WhiteRectangleDetector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\GenericGF.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\GenericGF.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\GenericGFPoly.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\GenericGFPoly.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\ReedSolomonDecoder.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\ReedSolomonDecoder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\ReedSolomonException.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\common\reedsolomon\ReedSolomonException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\DataMatrixReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\DataMatrixReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\Version.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/Version.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\Version.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\BitMatrixParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/decoder/BitMatrixParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\BitMatrixParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\DataBlock.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/decoder/DataBlock.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\DataBlock.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\DecodedBitStreamParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/decoder/DecodedBitStreamParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\DecodedBitStreamParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\Decoder.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/decoder/Decoder.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\decoder\Decoder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\CornerPoint.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\CornerPoint.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\Detector.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/datamatrix/detector/Detector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\Detector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\DetectorException.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\datamatrix\detector\DetectorException.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\ByQuadrantReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\ByQuadrantReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\GenericMultipleBarcodeReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\GenericMultipleBarcodeReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\MultipleBarcodeReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\MultipleBarcodeReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\QRCodeMultiReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\QRCodeMultiReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\detector\MultiDetector.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\detector\MultiDetector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\detector\MultiFinderPatternFinder.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\multi\qrcode\detector\MultiFinderPatternFinder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\CodaBarReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\CodaBarReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\Code128Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\Code128Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\Code39Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\Code39Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\Code93Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\Code93Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\EAN13Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\EAN13Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\EAN8Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\EAN8Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\ITFReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\ITFReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\MultiFormatOneDReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\MultiFormatOneDReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\MultiFormatUPCEANReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\MultiFormatUPCEANReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\OneDReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\OneDReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\OneDResultPoint.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\OneDResultPoint.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCAReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCAReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCEANReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCEANReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCEReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\oned\UPCEReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\PDF417Reader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\PDF417Reader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\BitMatrixParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/pdf417/decoder/BitMatrixParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\BitMatrixParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\DecodedBitStreamParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/pdf417/decoder/DecodedBitStreamParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\DecodedBitStreamParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\Decoder.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/pdf417/decoder/Decoder.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\Decoder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ErrorCorrection.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ErrorCorrection.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ModulusGF.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ModulusGF.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ModulusPoly.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\decoder\ec\ModulusPoly.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\detector\Detector.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/pdf417/detector/Detector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\detector\Detector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\pdf417\detector\LinesSampler.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\pdf417\detector\LinesSampler.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\ErrorCorrectionLevel.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\ErrorCorrectionLevel.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\FormatInformation.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\FormatInformation.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\QRCodeReader.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\QRCodeReader.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\Version.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/Version.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\Version.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\BitMatrixParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/decoder/BitMatrixParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\BitMatrixParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DataBlock.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/decoder/DataBlock.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DataBlock.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DataMask.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DataMask.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DecodedBitStreamParser.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/decoder/DecodedBitStreamParser.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\DecodedBitStreamParser.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\Decoder.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/decoder/Decoder.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\Decoder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\Mode.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\decoder\Mode.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\AlignmentPattern.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\AlignmentPattern.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\AlignmentPatternFinder.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\AlignmentPatternFinder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\Detector.cpp">
+      <ObjectFileName>$(IntDir)/core/src/zxing/qrcode/detector/Detector.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\Detector.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPattern.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPattern.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPatternFinder.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPatternFinder.h" />
+    <ClCompile Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPatternInfo.cpp" />
+    <ClInclude Include="D:\zxing-cpp-master\core\src\zxing\qrcode\detector\FinderPatternInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\OpenCVTest\ZERO_CHECK.vcxproj">
+      <Project>{2981FC3B-6315-3174-B75E-44A3005BF3D3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
