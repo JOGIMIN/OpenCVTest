@@ -2119,5 +2119,5 @@ void COpenCVTestDlg::OnBnClickedFindHarrisDetect()
 	cv::namedWindow("ORB keypoints", cv::WINDOW_NORMAL);
 	cv::imshow("ORB keypoints", image_with_keypoints);
 	cv::waitKey(0);
-	//..dd
+	//..dddd
 }
