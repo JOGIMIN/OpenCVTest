@@ -289,6 +289,7 @@ BOOL COpenCVTestDlg::OnInitDialog()
 	m_bBlobColorUseFlag = false;
 	m_PreProcessingAddCnt = 1;
 
+	
 	SetTimer(100, 1000, NULL);
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -373,6 +374,8 @@ void COpenCVTestDlg::OnBnClickedImageLoad()
 	//resize(m_MatImage, ReSizeImage, Size(1024, 768));
 	resize(m_MatImage, m_MatImage, Size(1024, 768));
 	imshow("ImageViewer", m_MatImage);
+	setMouseCallback("ImageViewer", mouseCallback); //23.06.08 gmjo 마우스 이벤트 처리.
+
 	m_MatImage = m_MatImage;
 
 }
@@ -2120,4 +2123,39 @@ void COpenCVTestDlg::OnBnClickedFindHarrisDetect()
 	cv::imshow("ORB keypoints", image_with_keypoints);
 	cv::waitKey(0);
 	//..dddd
+}
+
+void COpenCVTestDlg::mouseCallback(int event, int x, int y, int flags, void* userdata)
+{
+	COpenCVTestDlg m_pMain;
+	Mat MatTechingImg = m_pMain.m_MatImage.clone();
+	
+	int PosX, PosY;
+	if (event == EVENT_LBUTTONDOWN)
+	{
+		m_pMain.m_bDraggingFlag = true;
+		PosX = x;
+		PosY = y;
+	}
+	if (event == EVENT_MOUSEMOVE)
+	{
+		if (m_pMain.m_bDraggingFlag)
+		{
+			rectangle(MatTechingImg, Point(PosX, PosY), Point(x, y), Scalar(255, 0, 0), 2);
+		}
+
+	}
+	if (event == EVENT_LBUTTONUP)
+	{
+
+	}
+	if (MatTechingImg.empty())
+	{
+		return;
+	}
+	else
+	{
+		imshow("Image Viewer", MatTechingImg);
+	}
+	
 }

@@ -207,5 +207,9 @@ public:
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	void CheckParamData();
 	afx_msg void OnBnClickedFindHarrisDetect();
+	static void mouseCallback(int event, int x, int y, int flags, void * userdata);
+
+	bool m_bDraggingFlag = false;
+
 };
 
