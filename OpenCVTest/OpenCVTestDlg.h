@@ -49,6 +49,7 @@ public:
 	afx_msg void OnBnClicked1dBarcodeTest();
 	afx_msg void OnBnClicked2dBarcodeTest();
 	afx_msg void OnBnClickedFindShapeTest();
+	bool NotInList(Point newObject);
 	afx_msg void OnBnClickedMarkAreaSave();
 	afx_msg void OnBnClickedMarkAreaTest();
 
@@ -208,8 +209,6 @@ public:
 	void CheckParamData();
 	afx_msg void OnBnClickedFindHarrisDetect();
 	static void mouseCallback(int event, int x, int y, int flags, void * userdata);
-
-	bool m_bDraggingFlag = false;
 
 };
 

@@ -21,6 +21,12 @@ using namespace zbar;
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
+bool m_bDraggingFlag = false;
+int m_nPosX, m_nPosY;
+int m_nSecondPosX, m_nSecondPosY;
+Mat g_MatImage;
+
+vector<Point> detectedObjects;
 
 class CAboutDlg : public CDialogEx
 {
@@ -377,6 +383,8 @@ void COpenCVTestDlg::OnBnClickedImageLoad()
 	setMouseCallback("ImageViewer", mouseCallback); //23.06.08 gmjo 마우스 이벤트 처리.
 
 	m_MatImage = m_MatImage;
+	m_MatPreprocessingImage = m_MatImage; 
+	g_MatImage = m_MatImage;
 
 }
 
@@ -446,7 +454,7 @@ void COpenCVTestDlg::OnBnClicked2dBarcodeTest() //23.06.19 gmjo QRCodeDetector -
 	vector<Point> pt;
 	Mat DetectImage;
 
-	DetectImage = m_MatPreprocessingImage;
+	DetectImage = m_MatPreprocessingImage.clone();
 
 	if (Detector.detect(DetectImage, pt))
 	{
@@ -473,6 +481,72 @@ void COpenCVTestDlg::OnBnClickedMarkAreaSave()
 void COpenCVTestDlg::OnBnClickedMarkAreaTest()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	Mat OriginImage = m_MatPreprocessingImage.clone();
+	Mat TempImage;
+	Mat ProcessingImage;
+	double minVal, maxVal;
+	Point minLoc, maxLoc;
+	Point matchLoc;
+
+	TempImage = imread("D:\\VisionData\\CrobImage.bmp");
+	/*
+	0: TM_SQDIFF
+	1: TM_SQDIFF_NORMED
+	2: TM_CCORR
+	3: TM_CCORR_NORMED
+	4: TM_CCOEFF
+	5: TM_CCOEFF_NORMED";
+	*/
+	//cvtColor(OriginImage, OriginImage, COLOR_GRAY2BGR);
+	matchTemplate(OriginImage, TempImage, ProcessingImage, TM_SQDIFF_NORMED);
+
+
+	//int count = 0;
+	//for (int x = 0; x < ProcessingImage.cols; x++)
+	//{
+	//	for (int y = 0; y < ProcessingImage.rows; y++)
+	//	{
+	//		if (ProcessingImage.at<float>(y, x) > 0.9 && NotInList(Point(x, y)))
+	//		{
+	//			detectedObjects.push_back(Point(x, y));
+	//			rectangle(OriginImage, Point(x, y), Point(x + TempImage.cols, y + TempImage.rows),
+	//				Scalar(0, 0, 255), 1);
+	//			count++;
+	//		}
+	//
+	//	}
+	//}
+	//imshow("ImageViewer", OriginImage);
+	//imshow("templ", TempImage);
+	//imshow("result", ProcessingImage);
+	//return;
+
+	normalize(ProcessingImage, ProcessingImage, 0, 1, NORM_MINMAX, -1, Mat());
+	minMaxLoc(ProcessingImage, &minVal, &maxVal, &minLoc, &maxLoc, Mat());
+
+	matchLoc = maxLoc;
+	rectangle(OriginImage, matchLoc, Point(matchLoc.x + TempImage.cols, matchLoc.y + TempImage.rows), Scalar(0, 0, 255), 1);
+
+	circle(ProcessingImage, matchLoc, 3, Scalar(0, 0, 255), 1);
+
+	imshow("ImageViewer", OriginImage);
+	imshow("templ", TempImage);
+	imshow("result", ProcessingImage);
+}
+
+bool COpenCVTestDlg::NotInList(Point newObject)
+{
+	
+
+	for (int i = 0; i < detectedObjects.size(); i++)
+	{
+		float a = detectedObjects[i].x - newObject.x;
+		float b = detectedObjects[i].y - newObject.y;
+
+		if (sqrt(a*a + b*b) < 5.0) return false;
+	}
+
+	return true;
 }
 
 void COpenCVTestDlg::OnBnClickedFindShapeTest() //원형 찾기.
@@ -525,6 +599,7 @@ void COpenCVTestDlg::OnBnClickedFindShapeTest() //원형 찾기.
 		y = c[1];
 		cstrCirclePos.Format(_T("%d,%d"), x, y);
 		strCirclePos = String(CT2CA(cstrCirclePos));
+		cvtColor(OldImage, OldImage, COLOR_GRAY2BGR);
 		circle(OldImage, center, radius, Scalar(0, 255, 0), 2);
 		circle(OldImage, center, 2, Scalar(0, 0, 255), 3);
 		putText(OldImage, strCirclePos, center, 2, 1.2, Scalar(0, 255, 0));
@@ -532,7 +607,6 @@ void COpenCVTestDlg::OnBnClickedFindShapeTest() //원형 찾기.
 
 	imshow("ImageViewer", OldImage);
 }
-
 void COpenCVTestDlg::OnBnClickedFindShapeTest2() //사각형, 삼각형 찾기
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
@@ -2128,34 +2202,47 @@ void COpenCVTestDlg::OnBnClickedFindHarrisDetect()
 void COpenCVTestDlg::mouseCallback(int event, int x, int y, int flags, void* userdata)
 {
 	COpenCVTestDlg m_pMain;
-	Mat MatTechingImg = m_pMain.m_MatImage.clone();
-	
-	int PosX, PosY;
+	Mat MatTechingImg = g_MatImage.clone();
+
 	if (event == EVENT_LBUTTONDOWN)
 	{
-		m_pMain.m_bDraggingFlag = true;
-		PosX = x;
-		PosY = y;
+		m_bDraggingFlag = true;
+		m_nPosY = y;	
+		m_nPosX = x;
 	}
-	if (event == EVENT_MOUSEMOVE)
+	else if (event == EVENT_MOUSEMOVE)
 	{
-		if (m_pMain.m_bDraggingFlag)
+		if (m_bDraggingFlag == true)
 		{
-			rectangle(MatTechingImg, Point(PosX, PosY), Point(x, y), Scalar(255, 0, 0), 2);
+			rectangle(MatTechingImg, Point(m_nPosX, m_nPosY), Point(x, y), Scalar(255, 0, 0), 2);
+			imshow("ImageViewer", MatTechingImg);
 		}
+	}
+	else if (event == EVENT_LBUTTONUP)
+	{		
+		if (m_bDraggingFlag == true)
+		{
+			m_bDraggingFlag = false;
+			int width, height;
+			width = x - m_nPosX;
+			height = y - m_nPosY;
+			if (width > 0 && height > 0)
+			{
+				rectangle(MatTechingImg, Point(m_nPosX, m_nPosY), Point(x, y), Scalar(255, 0, 0), 2);
+				imshow("ImageViewer", MatTechingImg);
+			}
+			m_nSecondPosX = width;
+			m_nSecondPosY = height;
+		}	
+	}
+	else if (event == EVENT_RBUTTONDOWN)
+	{
+		// Rectangle 만든 영역 잘라내서 저장하기.
+		Mat CrobImage;
+		Rect rc(m_nPosX, m_nPosY, m_nSecondPosX, m_nSecondPosY);
+		CrobImage = MatTechingImg(rc);
+		imwrite("D:\\VisionData\\CrobImage.bmp", CrobImage);
+		imshow("ImageViewer2", CrobImage);
 
 	}
-	if (event == EVENT_LBUTTONUP)
-	{
-
-	}
-	if (MatTechingImg.empty())
-	{
-		return;
-	}
-	else
-	{
-		imshow("Image Viewer", MatTechingImg);
-	}
-	
 }
