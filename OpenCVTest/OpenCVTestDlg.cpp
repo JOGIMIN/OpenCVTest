@@ -182,6 +182,7 @@ BEGIN_MESSAGE_MAP(COpenCVTestDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_PREPROCESSING_TEST_BTN2, &COpenCVTestDlg::OnBnClickedPreprocessingTestBtn2)
 	ON_WM_TIMER()
 	ON_BN_CLICKED(IDC_FIND_HARRIS_DETECT, &COpenCVTestDlg::OnBnClickedFindHarrisDetect)
+	ON_BN_CLICKED(IDC_BUTTON1, &COpenCVTestDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -597,6 +598,33 @@ void COpenCVTestDlg::OnBnClickedFindShapeTest() //원형 찾기.
 		int radius = c[2];
 		x = c[0];
 		y = c[1];
+
+		//vector<Point> boundaryPoints;
+		//for (int angle = 0; angle < 360; angle++)
+		//{
+		//	int Center_x = cvRound(x + radius * cos(angle * CV_PI / 180));
+		//	int Center_y = cvRound(y + radius * sin(angle * CV_PI / 180));
+		//	boundaryPoints.push_back(cv::Point(x, y));
+		//}
+		//
+		//bool isHollowOnEdge = false;
+		//for (size_t i = 0; i < boundaryPoints.size() - 1; i++)
+		//{
+		//	double distance = cv::norm(boundaryPoints[i + 1] - boundaryPoints[i]);
+		//	if (distance > 10) // 거리가 급격하게 증가하는 구간 확인 (임의의 임계값 설정)
+		//	{
+		//		isHollowOnEdge = true;
+		//		break;
+		//	}
+		//}
+		//
+		//if (isHollowOnEdge)
+		//	cv::circle(OldImage, cv::Point(x, y), radius, cv::Scalar(0, 0, 255), 2);
+
+
+
+
+	
 		cstrCirclePos.Format(_T("%d,%d"), x, y);
 		strCirclePos = String(CT2CA(cstrCirclePos));
 		cvtColor(OldImage, OldImage, COLOR_GRAY2BGR);
@@ -1097,7 +1125,7 @@ void COpenCVTestDlg::OnBnClickedPreprocessingSaveBtn()
 	}
 	else if (m_strListName[nIndex] == _T("Canny"))
 	{
-		bComboUse1 = true; bComboUse2 = true; bComboUse3 = true; bComboUse4 = true; bComboUse5 = false; bComboUse6 = false;
+		bComboUse1 = false; bComboUse2 = false; bComboUse3 = false; bComboUse4 = false; bComboUse5 = false; bComboUse6 = false;
 	}
 	else if (m_strListName[nIndex] == _T("Dilate"))
 	{
@@ -1779,9 +1807,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 	//}
 	else if (strName == _T("Sobel"))
 	{
-		if (nParam1 == 1)
+		if (nParam1 == 0)
 		{
-			if (nParam2 == 1)
+			if (nParam2 == 0)
 			{
 				Sobel(OriginImage, ReturnImage, CV_8U, 1, 0);
 			}
@@ -1790,9 +1818,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 				Sobel(OriginImage, ReturnImage, CV_8U, 0, 1);
 			}								    									    
 		}									    
-		else if (nParam1 == 2)				    
+		else if (nParam1 == 1)				    
 		{									    
-			if (nParam2 == 1)				    
+			if (nParam2 == 0)				    
 			{								    
 				Sobel(OriginImage, ReturnImage, CV_8S, 1, 0);
 			}								    
@@ -1801,9 +1829,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 				Sobel(OriginImage, ReturnImage, CV_8S, 0, 1);
 			}								    
 		}									    
-		else if (nParam1 == 3)				    
+		else if (nParam1 == 2)				    
 		{									    
-			if (nParam2 == 1)				    
+			if (nParam2 == 0)				    
 			{								    
 				Sobel(OriginImage, ReturnImage, CV_16U, 1, 0);
 			}								    
@@ -1812,9 +1840,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 				Sobel(OriginImage, ReturnImage, CV_16U, 0, 1);
 			}								    
 		}									    
-		else if (nParam1 == 4)				    
+		else if (nParam1 == 3)				    
 		{									    
-			if (nParam2 == 1)				    
+			if (nParam2 == 0)				    
 			{								    
 				Sobel(OriginImage, ReturnImage, CV_16S, 1, 0);
 			}								    
@@ -1823,9 +1851,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 				Sobel(OriginImage, ReturnImage, CV_16S, 0, 1);
 			}								    
 		}									    
-		else if (nParam1 == 5)				    
+		else if (nParam1 == 4)				    
 		{									    
-			if (nParam2 == 1)				    
+			if (nParam2 == 0)				    
 			{								    
 				Sobel(OriginImage, ReturnImage, CV_32S, 1, 0);
 			}								    
@@ -1834,9 +1862,9 @@ Mat COpenCVTestDlg::PreProcessingImage(Mat OriginImage, CString strIndex, CStrin
 				Sobel(OriginImage, ReturnImage, CV_32S, 0, 1);
 			}								    
 		}									    
-		else if (nParam1 == 6)				    
+		else if (nParam1 == 5)				    
 		{									    
-			if (nParam2 == 1)				    
+			if (nParam2 == 0)				    
 			{								    
 				Sobel(OriginImage, ReturnImage, CV_32F, 1, 0);
 			}								    
@@ -2245,4 +2273,63 @@ void COpenCVTestDlg::mouseCallback(int event, int x, int y, int flags, void* use
 		imshow("ImageViewer2", CrobImage);
 
 	}
+}
+bool COpenCVTestDlg::WarpPolarTest()
+{
+
+	Mat image = m_MatImage.clone();
+	Mat OldImage = m_MatImage.clone();
+	vector<Vec3f> circles;
+	CString cstrCirclePos;
+	String strCirclePos;
+	HoughCircles(m_MatImage, circles, HOUGH_GRADIENT, 1, 50, 100, 100);
+
+	for (size_t i = 0; i < circles.size(); i++)
+	{
+		Vec3i c = circles[i];
+		Point center(c[0], c[1]);
+		int radius = c[2];
+		int x = c[0];
+		int y = c[1];
+
+		cstrCirclePos.Format(_T("%d,%d"), x, y);
+		strCirclePos = String(CT2CA(cstrCirclePos));
+		cvtColor(OldImage, OldImage, COLOR_GRAY2BGR);
+		circle(OldImage, center, radius, Scalar(0, 255, 0), 2);
+		circle(OldImage, center, 2, Scalar(0, 0, 255), 3);
+		putText(OldImage, strCirclePos, center, 2, 1.2, Scalar(0, 255, 0));
+		imshow("ImageViewer", OldImage);
+		// 극 좌표 변환 중심 좌표 설정
+		Point2f center2(c[0], c[1]);
+
+		//Point2f center(image.cols / 2, image.rows / 2);
+
+		// 극 좌표로 변환할 결과 이미지 크기 설정
+		Size polarSize(2592, 1944);
+
+		// 극 좌표 변환 수행
+		Mat polarImage;
+		warpPolar(image, polarImage, polarSize, center2, polarSize.width / 2, INTER_LINEAR | WARP_FILL_OUTLIERS);
+
+		// 결과 출력
+		resize(polarImage, polarImage, Size(1024, 768));
+		imshow("Polar Transformed Image", polarImage);
+		Canny(polarImage, polarImage, 50, 255, 3, false);
+		imshow("Polar Canny Image", polarImage);
+	}
+	
+
+	
+
+	waitKey(0);
+	destroyAllWindows();
+
+	return 0;
+}
+
+
+void COpenCVTestDlg::OnBnClickedButton1()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	WarpPolarTest();
 }
