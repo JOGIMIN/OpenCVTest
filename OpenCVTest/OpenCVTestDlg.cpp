@@ -476,6 +476,25 @@ void COpenCVTestDlg::OnBnClicked2dBarcodeTest() //23.06.19 gmjo QRCodeDetector -
 void COpenCVTestDlg::OnBnClickedMarkAreaSave()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+	Mat Image = imread("D:\\VisionData\\CrobImage.bmp");
+	CString strFileTemp;
+	String strFileName;
+	double angle = 0;
+	Mat rotationMatrix;
+	Mat roTatedImage;
+	
+	Point2f center(Image.cols / 2.0, Image.rows / 2.0);
+	for (int i = 0; i < 365; i++)
+	{
+		angle = 0;
+		angle = angle + i;
+		rotationMatrix = getRotationMatrix2D(center, angle, 1.0);	
+		warpAffine(Image, roTatedImage, rotationMatrix, Image.size());
+		strFileTemp.Format(_T("D:\\VisionData\\CrobImage%d.bmp"), i);
+		strFileName = String(CT2CA(strFileTemp));
+		imwrite(strFileName, roTatedImage);
+	}
 }
 
 
@@ -499,7 +518,7 @@ void COpenCVTestDlg::OnBnClickedMarkAreaTest()
 	5: TM_CCOEFF_NORMED";
 	*/
 	//cvtColor(OriginImage, OriginImage, COLOR_GRAY2BGR);
-	matchTemplate(OriginImage, TempImage, ProcessingImage, TM_SQDIFF_NORMED);
+	matchTemplate(OriginImage, TempImage, ProcessingImage, TM_CCOEFF_NORMED);
 
 
 	//int count = 0;
@@ -2282,44 +2301,175 @@ bool COpenCVTestDlg::WarpPolarTest()
 	vector<Vec3f> circles;
 	CString cstrCirclePos;
 	String strCirclePos;
-	HoughCircles(m_MatImage, circles, HOUGH_GRADIENT, 1, 50, 100, 100);
 
-	for (size_t i = 0; i < circles.size(); i++)
+	bool bUseContours;
+	bool bUseHoughLine;
+	bool bUseWarpPolar;
+	bool bUseFindDarkArea;
+
+	bUseWarpPolar = false;
+	bUseFindDarkArea = true;
+	bUseContours = false;
+	bUseHoughLine = true;
+
+	if (image.empty())
 	{
-		Vec3i c = circles[i];
+		return true;
+	}
+	
+	HoughCircles(image, circles, HOUGH_GRADIENT, 1, 50, 100, 100);
+
+	if (bUseFindDarkArea)
+	{
+		// 이미지를 그레이스케일로 변환합니다.
+		Mat grayImage;
+	//	cvtColor(OldImage, grayImage, COLOR_BGR2GRAY);
+		Vec3i c = circles[0];
 		Point center(c[0], c[1]);
 		int radius = c[2];
 		int x = c[0];
 		int y = c[1];
 
-		cstrCirclePos.Format(_T("%d,%d"), x, y);
-		strCirclePos = String(CT2CA(cstrCirclePos));
-		cvtColor(OldImage, OldImage, COLOR_GRAY2BGR);
-		circle(OldImage, center, radius, Scalar(0, 255, 0), 2);
-		circle(OldImage, center, 2, Scalar(0, 0, 255), 3);
-		putText(OldImage, strCirclePos, center, 2, 1.2, Scalar(0, 255, 0));
-		imshow("ImageViewer", OldImage);
-		// 극 좌표 변환 중심 좌표 설정
-		Point2f center2(c[0], c[1]);
+		// 원형 영역에 해당하는 마스크를 생성합니다.
+		Mat mask = Mat::zeros(image.size(), CV_8UC1);
+		circle(mask, center, radius, Scalar(255), -1);
 
-		//Point2f center(image.cols / 2, image.rows / 2);
+		// 이미지 이진화를 수행합니다. (바탕이 흰색이고 검정색 영역을 찾을 것이므로 반전합니다.)
+		Mat binaryImage;
+		threshold(OldImage, binaryImage, 23, 255, THRESH_BINARY);
+		bitwise_not(binaryImage, binaryImage);
+		// 이진 이미지에서 검정색 영역을 찾습니다.
+		vector<vector<Point>> contours;
+		vector<Vec4i> hierarchy;
+		findContours(binaryImage, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 
-		// 극 좌표로 변환할 결과 이미지 크기 설정
-		Size polarSize(2592, 1944);
+		// 검정색 영역의 면적을 계산합니다.
+		double totalArea = 0.0;
+		for (const auto& contour : contours)
+		{
+			double area = contourArea(contour);
+			totalArea += area;
+		}
 
-		// 극 좌표 변환 수행
-		Mat polarImage;
-		warpPolar(image, polarImage, polarSize, center2, polarSize.width / 2, INTER_LINEAR | WARP_FILL_OUTLIERS);
+		// 검정색 영역의 면적을 출력합니다.
+		std::cout << "Black region area: " << totalArea << " pixels" << std::endl;
 
-		// 결과 출력
-		resize(polarImage, polarImage, Size(1024, 768));
-		imshow("Polar Transformed Image", polarImage);
-		Canny(polarImage, polarImage, 50, 255, 3, false);
-		imshow("Polar Canny Image", polarImage);
+		// 검정색 영역을 그림으로 표시한 이미지를 출력합니다.
+		cvtColor(image, image, COLOR_GRAY2BGR);
+		drawContours(image, contours, -1, Scalar(0, 0, 255), 2);
+		imshow("Image with Black Region", image);
 	}
-	
 
-	
+	if (bUseWarpPolar)
+	{
+		for (size_t i = 0; i < circles.size(); i++)
+		{
+			Vec3i c = circles[i];
+			Point center(c[0], c[1]);
+			int radius = c[2];
+			int x = c[0];
+			int y = c[1];
+
+			cstrCirclePos.Format(_T("%d,%d"), x, y);
+			strCirclePos = String(CT2CA(cstrCirclePos));
+			cvtColor(OldImage, OldImage, COLOR_GRAY2BGR);
+			circle(OldImage, center, radius, Scalar(0, 255, 0), 2);
+			circle(OldImage, center, 2, Scalar(0, 0, 255), 3);
+			putText(OldImage, strCirclePos, center, 2, 1.2, Scalar(0, 255, 0));
+			imshow("ImageViewer", OldImage);
+
+			// 극 좌표 변환 중심 좌표 설정
+			Point2f center2(c[0], c[1]);
+
+			//Point2f center(image.cols / 2, image.rows / 2);
+
+			// 극 좌표로 변환할 결과 이미지 크기 설정
+			Size polarSize(2592, 1944);
+
+			// 극 좌표 변환 수행
+			Mat polarImage;
+			Mat polarImage_canny;
+			warpPolar(image, polarImage, polarSize, center2, polarSize.width / 2, INTER_LINEAR | WARP_FILL_OUTLIERS);
+
+			// 결과 출력
+			resize(polarImage, polarImage, Size(1024, 768));
+			imshow("Polar Transformed Image", polarImage);
+			Canny(polarImage, polarImage_canny, 50, 255, 3, false);
+			imshow("Polar Canny Image", polarImage_canny);
+
+			if (bUseContours)
+			{
+				Mat ContoursImage;
+				vector<vector<Point>> contours;
+				vector<Vec4i> hierarchy;
+				findContours(polarImage_canny, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE); //어두운 배경에서 밝은 객체를 찾는것이 유리함.
+
+				vector<vector<Point> >hull(contours.size());
+
+				cvtColor(polarImage_canny, polarImage_canny, COLOR_GRAY2BGR);
+				for (int j = 0; j < contours.size(); j++)
+				{
+					convexHull(contours[j], hull[j]);
+				}
+				for (int j = 0; j < contours.size(); j++)
+				{
+					//if (contours[j].size() > 1000)
+					//{
+					drawContours(polarImage_canny, contours, j, Scalar(255, 0, 255), 1);
+					//}
+					//if (hull[j].size() > 0)
+					//{
+					//	drawContours(polarImage_canny, hull, j, Scalar(255, 0, 0), 1);
+					//}
+				}
+
+
+
+				imshow("Polar Canny Image", polarImage_canny);
+			}
+			if (bUseHoughLine)
+			{
+				CString strThreshold, strMin, strMax;
+				int nParam1, nParam2, nParam3;
+				GetDlgItem(IDC_TEST_MAX_VALUE)->GetWindowTextW(strMax);
+				GetDlgItem(IDC_TEST_MIN_VALUE)->GetWindowTextW(strMin);
+				GetDlgItem(IDC_TEST_THRESHOLD)->GetWindowTextW(strThreshold);
+				nParam1 = _ttoi(strThreshold);
+				nParam2 = _ttoi(strMin);
+				nParam3 = _ttoi(strMax);
+
+				if (nParam1 == 0)
+				{
+					nParam1 = 100;
+				}
+				if (nParam2 == 0)
+				{
+					nParam2 = 100;
+				}
+				if (nParam3 == 0)
+				{
+					nParam3 = 10;
+				}
+
+				vector<Vec4i> lines;
+				HoughLinesP(polarImage_canny, lines, 1, (CV_PI / 180), nParam1, nParam2, nParam3);
+				//계산 각도  ,Threshold, min_line_length, max_line_gap
+				Mat lineImage = polarImage_canny.clone();
+				cvtColor(polarImage, polarImage, COLOR_GRAY2BGR);
+				for (size_t i = 0; i < lines.size(); i++)
+				{
+					cv::Vec4i line = lines[i];
+					cv::line(polarImage, cv::Point(line[0], line[1]), cv::Point(line[2], line[3]), cv::Scalar(255, 0, 0), 2);
+				}
+
+				//cv::Mat combinedImage;
+				//cv::hconcat(image, polarImage_canny, combinedImage);
+				//cv::hconcat(combinedImage, lineImage, combinedImage);
+
+				cv::imshow("Detected Lines", polarImage);
+			}
+		}
+	}
 
 	waitKey(0);
 	destroyAllWindows();
