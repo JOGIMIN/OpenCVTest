@@ -2302,10 +2302,15 @@ bool COpenCVTestDlg::WarpPolarTest()
 	CString cstrCirclePos;
 	String strCirclePos;
 
+	CString cstrHollPos;
+	String strHollPos;
+
 	bool bUseContours;
 	bool bUseHoughLine;
 	bool bUseWarpPolar;
 	bool bUseFindDarkArea;
+
+	auto abc = 10;
 
 	bUseWarpPolar = false;
 	bUseFindDarkArea = true;
@@ -2336,12 +2341,14 @@ bool COpenCVTestDlg::WarpPolarTest()
 
 		// 이미지 이진화를 수행합니다. (바탕이 흰색이고 검정색 영역을 찾을 것이므로 반전합니다.)
 		Mat binaryImage;
+		Mat Result;
 		threshold(OldImage, binaryImage, 23, 255, THRESH_BINARY);
 		bitwise_not(binaryImage, binaryImage);
+		bitwise_and(binaryImage, binaryImage, Result, mask);
 		// 이진 이미지에서 검정색 영역을 찾습니다.
 		vector<vector<Point>> contours;
 		vector<Vec4i> hierarchy;
-		findContours(binaryImage, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE);
+		findContours(Result, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 
 		// 검정색 영역의 면적을 계산합니다.
 		double totalArea = 0.0;
@@ -2356,7 +2363,19 @@ bool COpenCVTestDlg::WarpPolarTest()
 
 		// 검정색 영역을 그림으로 표시한 이미지를 출력합니다.
 		cvtColor(image, image, COLOR_GRAY2BGR);
-		drawContours(image, contours, -1, Scalar(0, 0, 255), 2);
+		//drawContours(image, contours, -1, Scalar(0, 0, 255), 2);
+		for (int i = 0; i < contours.size(); i++)
+		{
+			if (contours[i].size() > 5 && contours[i].size() < 20)
+			{
+				cstrCirclePos.Format(_T("%d,%d"), contours[i][0].x, contours[i][0].y);
+				strCirclePos = String(CT2CA(cstrCirclePos));
+				putText(image, strCirclePos, center, 2, 1.2, Scalar(0, 255, 0));
+
+				drawContours(image, contours, i, Scalar(0, 0, 255), 2);
+			}
+		
+		}
 		imshow("Image with Black Region", image);
 	}
 
