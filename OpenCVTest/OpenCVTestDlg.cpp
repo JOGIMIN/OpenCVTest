@@ -183,6 +183,7 @@ BEGIN_MESSAGE_MAP(COpenCVTestDlg, CDialogEx)
 	ON_WM_TIMER()
 	ON_BN_CLICKED(IDC_FIND_HARRIS_DETECT, &COpenCVTestDlg::OnBnClickedFindHarrisDetect)
 	ON_BN_CLICKED(IDC_BUTTON1, &COpenCVTestDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &COpenCVTestDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -2501,4 +2502,16 @@ void COpenCVTestDlg::OnBnClickedButton1()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	WarpPolarTest();
+}
+
+
+void COpenCVTestDlg::OnBnClickedButton2()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+
+	Mat FlipImage = m_MatImage.clone();
+
+	flip(FlipImage, FlipImage, -1);
+	imshow("FlipImage", FlipImage);
+
 }
